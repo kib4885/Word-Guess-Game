@@ -7,7 +7,7 @@ var stateCapitals = [
     //"lincoln",
     //"trenton",
     //"nashville",
-   // "austin",
+    // "austin",
     //"madison",
     //"richmond",  
 ];
@@ -22,7 +22,7 @@ var wordSelection; // played word
 
 function setup() {
     wordSelection = stateCapitals[Math.floor(Math.random() * stateCapitals.length)];
-console.log(wordSelection);
+    console.log(wordSelection);
     wordblanks = [];
 
     for (var i = 0; i < wordSelection.length; i++) {
@@ -42,24 +42,22 @@ function display() {
     document.getElementById("answer").innerText = wordblanks.join(" ");
     document.getElementById("usedletters").innerText = usedletters;
 };
-console.log (display)
-function pullLetters (letter) {
-    console.log(wordSelection+"this"); console.log(letter+"this")
-    if (usedletters.indexOf(letter) ===-1) {
+console.log(display)
+function pullLetters(letter) {
+    if (usedletters.indexOf(letter) === -1) {
         usedletters.push(letter);
-        console.log(wordSelection+"this2"); console.log(letter+"this2");
-        if (wordSelection.indexOf(letter) === -1) { console.log(wordSelection+"this"); console.log(letter+"this")
+        if (wordSelection.indexOf(letter) === -1) {
             usedguesses--;
-        } else { 
+        } else {
             for (var j = 0; j < wordSelection.length; j++) {
                 if (letter === wordSelection[j]) {
                     wordblanks[j] = letter;
-                } 
-            }                
+                }
+            }
         }
     }
-console.log (pullLetters)
-}; 
+    console.log(pullLetters)
+};
 function correctguess() {
     console.log("correctguess"); console.log(wordblanks);
     if (wordblanks.indexOf("_") === -1) {
@@ -74,41 +72,41 @@ function correctguess() {
         else if (wordSelection === "dover") {
             document.getElementById("answerimage").src = "assets/images/alabama-montgomery.jpg"
         }
-       // else if (wordSelection === "atlanta") {
-      //      document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
-       // }
-       // else if (wordSelection === "frankfort") {
-           // document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
-       // }
+        // else if (wordSelection === "atlanta") {
+        //      document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
+        // }
+        // else if (wordSelection === "frankfort") {
+        // document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
+        // }
         //else if (wordSelection === "lincoln") {
-           // document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
-       // }
-       // else if (wordSelection === "trenton") {
-            //document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
-//}
-       /// else if (wordSelection === "nashville") {
-           // document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
+        // document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
+        // }
+        // else if (wordSelection === "trenton") {
+        //document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
         //}
-       // else if (wordSelection === "austin") {
-            //document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
-       // }
-       // else if (wordSelection === "madison") {
-            //document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
-       // }
-       // else if (wordSelection === "richmond") {
-       //     document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
-       // }
+        /// else if (wordSelection === "nashville") {
+        // document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
+        //}
+        // else if (wordSelection === "austin") {
+        //document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
+        // }
+        // else if (wordSelection === "madison") {
+        //document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
+        // }
+        // else if (wordSelection === "richmond") {
+        //     document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
+        // }
     }
 
 };
 
-document.onkeyup = function(event) {
+document.onkeyup = function (event) {
     if (isFinished) {
         setup();
         isFinished = false;
     } else {
-        if(event.keyCode >= 65 && event.keyCode <= 90) {
-            pullLetters(event.key); 
+        if (event.keyCode >= 65 && event.keyCode <= 90) {
+            pullLetters(event.key);
             display();
             correctguess();
         }
