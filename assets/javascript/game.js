@@ -2,14 +2,14 @@ var stateCapitals = [
     "montgomery",
     "denver",
     "dover",
-    //"atlanta",
-    //"frankfort",
-    //"lincoln",
-    //"trenton",
-    //"nashville",
-    // "austin",
-    //"madison",
-    //"richmond",  
+    "atlanta",
+    "frankfort",
+    "lincoln",
+    "trenton",
+    "nashville",
+    "austin",
+    "madison",
+    "richmond",  
 ];
 var allowedguess = 10; // number of guesses allowed
 var usedletters = []; // letters player has already used
@@ -67,37 +67,36 @@ function correctguess() {
             document.getElementById("answerimage").src = "assets/images/alabama-montgomery.jpg"
         }
         else if (wordSelection === "denver") {
-            document.getElementById("answerimage").src = "assets/images/alabama-montgomery.jpg"
+            document.getElementById("answerimage").src = "assets/images/Colorado-denver.jpg"
         }
         else if (wordSelection === "dover") {
-            document.getElementById("answerimage").src = "assets/images/alabama-montgomery.jpg"
+            document.getElementById("answerimage").src = "assets/images/delaware-dover.jpg"
         }
-        // else if (wordSelection === "atlanta") {
-        //      document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
-        // }
-        // else if (wordSelection === "frankfort") {
-        // document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
-        // }
-        //else if (wordSelection === "lincoln") {
-        // document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
-        // }
-        // else if (wordSelection === "trenton") {
-        //document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
-        //}
-        /// else if (wordSelection === "nashville") {
-        // document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
-        //}
-        // else if (wordSelection === "austin") {
-        //document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
-        // }
-        // else if (wordSelection === "madison") {
-        //document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
-        // }
-        // else if (wordSelection === "richmond") {
-        //     document.getElementById("answerimage").src = "images/alabama-montgomery.jpg"
-        // }
+        else if (wordSelection === "atlanta") {
+             document.getElementById("answerimage").src = "assets/images/georgia-atlanta.jpg"
+        }
+        else if (wordSelection === "frankfort") {
+        document.getElementById("answerimage").src = "assets/images/kentucky-frankfort.jpg"
+        }
+        else if (wordSelection === "lincoln") {
+        document.getElementById("answerimage").src = "assets/images/nebraska-lincoln.jpg"
+        }
+        else if (wordSelection === "trenton") {
+        document.getElementById("answerimage").src = "assets/images/newjersey-trenton.jpg"
+        }
+        else if (wordSelection === "nashville") {
+        document.getElementById("answerimage").src = "assets/images/tennesse-nashville.jpg"
+        }
+        else if (wordSelection === "austin") {
+        document.getElementById("answerimage").src = "assets/images/texas-austin.jpg"
+        }
+        else if (wordSelection === "madison") {
+        document.getElementById("answerimage").src ="assets/images/wisconsin-madison.jpg"
+        }
+        else if (wordSelection === "richmond") {
+            document.getElementById("answerimage").src = "assets/images/virginia-richmond.jpg"
+        }
     }
-
 };
 
 document.onkeyup = function (event) {
